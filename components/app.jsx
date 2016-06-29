@@ -2,6 +2,12 @@ var React = require('react'),
     ReactDOM = require('react-dom');
 
 var App = React.createClass({
+  getInitialState: function () {
+    return {
+      title: null
+    };
+  },
+
   render: function () {
     return (
       <div id="container">
@@ -23,11 +29,12 @@ var App = React.createClass({
         </div>
 
         <div id="main">
-          <h1>New Dashboard</h1>
+          <h1>{ this.state.title ? this.state.title : "New Dashboard" }</h1>
           <p className="dashboard-switcher">Dashboard Switcher</p>
-          <select>
-            <option>-Select a Dashboard-</option>
-          </select>
+          <div>
+            { this.state.title ? this.state.title : "-Select a Dashboard-" }
+            <img src="images/dropdown-arrow.png" />
+          </div>
           <div>
             <div><img src="images/icon-add.png"/></div>
             <div>Add a New Widget</div>
