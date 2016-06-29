@@ -1,16 +1,19 @@
 var React = require('react'),
-    ReactDOM = require('react-dom');
+    ReactDOM = require('react-dom'),
+    Panel = require('./panel');
 
 var App = React.createClass({
   getInitialState: function () {
     return {
-      title: null
+      title: null,
+      addPanelShowing: false
     };
   },
 
   render: function () {
     return (
       <div id="container">
+        <Panel />
         <div id="header">
           <nav>
             <img src="images/logo-foodiq.png"/>
