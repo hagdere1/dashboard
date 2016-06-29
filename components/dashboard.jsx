@@ -24,40 +24,48 @@ var Dashboard = React.createClass({
     });
 
     return (
-      <div id="container">
-        <Panel />
-        <div id="header">
-          <nav>
-            <img src="images/logo-foodiq.png"/>
-            <ul>
-              <li><a href="#">Nav One</a></li>
-              <li><a href="#">Nav Two</a></li>
-              <li><a href="#">Dashboards</a></li>
+      <div className="container">
+        <div className="header">
+          <nav className="group">
+            <img className="logo" src="images/logo-foodiq.png"/>
+            <ul className="nav-tabs group">
+              <li className="nav-tab">Nav One</li>
+              <li className="nav-tab">Nav Two</li>
+              <li className="nav-tab selected">Dashboards</li>
             </ul>
-            <div><a href="#">Help</a>  |  <a href="#">Contact</a></div>
-            <div>
-              John Jones
-              <img src="images/icon-namearrow.png"/>
+            <div className="user group">
+              <div className="user-name">John Jones</div>
+              <img className="user-icon" src="images/icon-namearrow.png"/>
             </div>
+            <div className="nav-links"><a href="#">Help</a>  |  <a href="#">Contact</a></div>
           </nav>
-          <div id="spacer">{ this.state.title ? "Dashboards / " + this.state.title : "Dashboards" }</div>
+          <div className="spacer">
+            <div className="dashboards-title">{ this.state.title ? "Dashboards / " + this.state.title : "Dashboards" }</div>
+          </div>
         </div>
 
-        <div id="main">
-          <h1>{ this.state.title ? this.state.title : "New Dashboard" }</h1>
-          <img src="images/icon-edit.png"/>
-          <p className="dashboard-switcher">Dashboard Switcher</p>
-          <div>
-            { this.state.title ? this.state.title : "-Select a Dashboard-" }
-            <img src="images/dropdown-arrow.png" />
+        <div className="main">
+          <div className="group">
+            <div className="dashboard-title group">
+              <h1>{ this.state.title ? this.state.title : "New Dashboard" }</h1>
+              <img src="images/icon-edit.png"/>
+            </div>
+            <div className="dashboard-controls">
+              <div>
+                <p>Dashboard Switcher</p>
+                <div className="dashboard-select">
+                  <div className="dashboard-select-option">{ this.state.title ? this.state.title : "-Select a Dashboard-" }</div>
+                  <img src="images/dropdown-arrow.png" />
+                </div>
+              </div>
+              <div className="new-widget-button">
+                <img src="images/icon-add.png"/>
+                <div>Add a New Widget</div>
+              </div>
+            </div>
           </div>
-          <div>
-            <div><img src="images/icon-add.png"/></div>
-            <div>Add a New Widget</div>
-          </div>
-          <div className="rule"></div>
 
-          <Table tableSize="large"/>
+          <div className="rule"></div>
 
           <div>
             <img src="images/icon-add-large.png"/>
@@ -65,7 +73,7 @@ var Dashboard = React.createClass({
           </div>
         </div>
 
-        <div id="footer">
+        <div className="footer">
           <div>© 2016 FoodIQ  |  © Energy Metrics, LLC</div>
         </div>
       </div>

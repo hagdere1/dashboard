@@ -1,0 +1,133 @@
+/* CSS Preset */
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.container {
+  height: 100vh;
+}
+
+nav {
+  height: 60px;
+  background-color: #ffffff;
+  padding: 0 65.7px;
+}
+
+.logo {
+  float: left;
+  padding: 17.2px 65.5px 19.3px 0;
+}
+
+.nav-tabs {
+  list-style: none;
+  float: left;
+  border-left: 1px solid #dddddd;
+}
+
+.nav-tab {
+  float: left;
+  padding: 22px 23.5px;
+  font-family: HelveticaNeue;
+	font-size: 14px;
+	color: #00a4c7;
+  border-right: 1px solid #dddddd;
+}
+
+.nav-tab.selected {
+  padding: 20px 23.5px;
+  color: #333333;
+  background-color: #f7f7f7;
+  border-top: 4px solid #333333;
+}
+
+.nav-links {
+  float: right;
+  width: 98px;
+	height: 16px;
+	font-family: HelveticaNeue;
+	font-size: 13px;
+	text-align: right;
+	color: #777777;
+  padding-top: 13px;
+  padding-bottom: 31px;
+}
+
+.user {
+  float: right;
+}
+
+.user-name {
+  float: left;
+  width: 68px;
+  height: 16px;
+  font-family: HelveticaNeue;
+  font-size: 13px;
+  text-align: right;
+  color: #777777;
+  padding: 13px 8px 31px 32px;
+}
+
+.user-icon {
+  float: left;
+  padding-bottom: 34px;
+  padding-top: 17px;
+}
+
+.spacer {
+  height: 40px;
+  background-color: #333333;
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  font-family: HelveticaNeue;
+	font-size: 20px;
+	letter-spacing: -0.1px;
+	color: #ffffff;
+}
+
+.dashboards-title {
+  padding: 6px 0 9px 64px;
+}
+
+.main {
+  min-height: calc(100% - 100px);
+  min-height: -o-calc(100% - 100px); /* opera */
+  min-height: -webkit-calc(100% - 100px); /* google, safari */
+  min-height: -moz-calc(100% - 100px); /* firefox */
+  background-color: #f7f7f7;
+}
+
+.dashboard-title {
+  float: left;
+}
+
+.dashboard-title h1 {
+  float: left;
+  font-family: HelveticaNeue;
+	font-size: 24px;
+	letter-spacing: -0.1px;
+	color: #333333;
+  margin: 47px 10px 16px 64px;
+}
+
+.dashboard-title img {
+  float: left;
+  margin-top: 51px;
+}
+
+.dashboard-controls {
+  float: right;
+}
+
+.dashboard-controls p {
+
+}

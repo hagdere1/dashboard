@@ -48,7 +48,6 @@ var Panel = React.createClass({
           <div className="panel-header-selection">
             <label className="panel-header-selection-label">Widget Title (30 characters max)</label>
             <input type="text"/>
-
             <label className="panel-header-selection-label">Widget Description (50 characters max)</label>
             <input type="text"/>
           </div>
