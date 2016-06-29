@@ -57,7 +57,7 @@ var Dashboard = React.createClass({
           </div>
           <div className="rule"></div>
 
-          <Table tableSize="large"/>
+          <Table tableSize="small"/>
 
           <div>
             <img src="images/icon-add-large.png"/>

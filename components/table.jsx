@@ -1,27 +1,27 @@
 var React = require('react');
 
 var Table = React.createClass({
-  countries: {
-    "Brazil": "Meats, Poultry, Fish",
-    "Canada": "Dairy",
-    "China": "Grains",
-    "India": "Grains",
-    "Japan": "Vegetables"
-  },
+  smallTableData: [
+    { "Country": "Brazil", "Most Consumed": "Meats, Poultry, Fish" },
+    { "Country": "Canada", "Most Consumed": "Dairy" },
+    { "Country": "China", "Most Consumed": "Grains" },
+    { "Country": "India", "Most Consumed": "Grains" },
+    { "Country": "Japan", "Most Consumed": "Vegetables" }
+  ],
 
   render: function () {
-    if (this.props.tableSize === "large") {
-      var tableRows = Object.keys(this.countries).map(function (country) {
+    if (this.props.tableSize === "small") {
+      var tableRows = this.smallTableData.map(function (country, idx) {
         return (
-          <ul>
-            <li>{country}</li>
-            <li>{this.countries[country]}</li>
+          <ul className="row" key={idx}>
+            <li>{country["Country"]}</li>
+            <li>{country["Most Consumed"]}</li>
           </ul>
         );
-      }.bind(this));
+      });
 
       return (
-        <div className="table-large">
+        <div className="table-small">
           <div className="table-header">
             <div>
               <h2>Title</h2>
@@ -33,7 +33,10 @@ var Table = React.createClass({
             </div>
           </div>
           <ul className="col-headers">
-            <li className="col-header">Country</li>
+            <li className="col-header">
+              Country
+              <img src="images/icon-table-sort-down.png"/>
+            </li>
             <li className="col-header">Most Consumed</li>
           </ul>
           <ul className="table-rows">
@@ -43,13 +46,11 @@ var Table = React.createClass({
       );
     } else if (this.props.tableSize === "medium") {
       return (
-        <div>
-        </div>
+        <div></div>
       );
     } else {
       return (
-        <div>
-        </div>
+        <div></div>
       );
     }
   }
