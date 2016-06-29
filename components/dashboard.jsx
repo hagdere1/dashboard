@@ -1,16 +1,28 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
-    Panel = require('./panel');
+    Panel = require('./panel'),
+    Table = require('./table');
 
-var App = React.createClass({
+var Dashboard = React.createClass({
   getInitialState: function () {
     return {
-      title: null,
-      addPanelShowing: false
+      title: "Hello",
+      addPanelShowing: false,
+      widgets: []
     };
   },
 
+  addWidget: function (widget) {
+    var currentWidgets = this.state.widgets;
+    currentWidgets.push(widget);
+    this.setState({ widgets: currentWidgets });
+  },
+
   render: function () {
+    var widgets = this.state.widgets.map(function (widget) {
+      return <Table />;
+    });
+
     return (
       <div id="container">
         <Panel />
@@ -28,11 +40,12 @@ var App = React.createClass({
               <img src="images/icon-namearrow.png"/>
             </div>
           </nav>
-          <div id="spacer">Dashboards</div>
+          <div id="spacer">{ this.state.title ? "Dashboards / " + this.state.title : "Dashboards" }</div>
         </div>
 
         <div id="main">
           <h1>{ this.state.title ? this.state.title : "New Dashboard" }</h1>
+          <img src="images/icon-edit.png"/>
           <p className="dashboard-switcher">Dashboard Switcher</p>
           <div>
             { this.state.title ? this.state.title : "-Select a Dashboard-" }
@@ -43,6 +56,9 @@ var App = React.createClass({
             <div>Add a New Widget</div>
           </div>
           <div className="rule"></div>
+
+          <Table tableSize="large"/>
+
           <div>
             <img src="images/icon-add-large.png"/>
             Add a New Widget
@@ -58,5 +74,5 @@ var App = React.createClass({
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  ReactDOM.render(<App />, document.getElementById("content"));
+  ReactDOM.render(<Dashboard />, document.getElementById("content"));
 });
