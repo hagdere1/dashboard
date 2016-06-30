@@ -260,6 +260,10 @@ nav {
   padding: 30px 64px 69px 64px;
 }
 
+.panel-type-selection {
+  border-bottom: solid 1px #dddddd;
+}
+
 .panel-type-selection p {
   font-family: HelveticaNeue;
 	font-size: 16px;
@@ -319,4 +323,75 @@ nav {
 
 .widget-sizes li:last-child {
   border-right: 0px;
+}
+
+.dashboard-header-selection {
+  padding-top: 28px;
+  padding-bottom: 31px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.dashboard-header-selection p {
+  font-family: HelveticaNeue;
+	font-size: 16px;
+	letter-spacing: -0.1px;
+	color: #333333;
+  margin-bottom: 18px;
+}
+
+.dashboard-header-selection-label {
+  font-family: HelveticaNeue;
+	font-size: 12px;
+	letter-spacing: -0.1px;
+	color: #333333;
+  margin-bottom: 10px;
+}
+
+.dashboard-header-selection-label strong {
+  font-family: HelveticaNeue-Bold;
+}
+
+.dashboard-header-selection label {
+  display: block;
+}
+
+.dashboard-header-selection input {
+  width: 268px;
+	border-radius: 3px;
+	background-color: #ffffff;
+	border: solid 1px #bbbbbb;
+}
+
+.dashboard-header-selection input.title {
+  height: 30px;
+  margin-bottom: 18px;
+}
+
+.dashboard-header-selection input.description {
+  height: 60px;
+}
+
+.panel-options {
+  padding-top: 31px;
+}
+
+.panel-options button {
+  width: 120px;
+	height: 30px;
+	border-radius: 3px;
+	background-color: #ffffff;
+	border: solid 1px #bbbbbb;
+  font-family: HelveticaNeue-Bold;
+	font-size: 14px;
+	text-align: center;
+	color: #333333;
+  margin-right: 30px;
+}
+
+.cancel {
+  font-family: HelveticaNeue;
+	font-size: 14px;
+	color: #777777;
+  text-decoration: underline;
+  display: inline-block;
 }

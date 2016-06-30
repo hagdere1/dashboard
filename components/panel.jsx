@@ -55,14 +55,16 @@ var Panel = React.createClass({
               </div>
             </div>
 
-            <div className="panel-header-selection">
-              <label className="panel-header-selection-label">Widget Title (30 characters max)</label>
-              <input type="text"/>
-              <label className="panel-header-selection-label">Widget Description (50 characters max)</label>
-              <input type="text"/>
+
+            <div className="dashboard-header-selection">
+              <p>Widget Header (Optional)</p>
+              <label className="dashboard-header-selection-label"><strong>Widget Title</strong> (30 characters max)</label>
+              <input type="text" className="title"/>
+              <label className="dashboard-header-selection-label"><strong>Widget Description</strong> (50 characters max)</label>
+              <input type="text" className="description"/>
             </div>
 
-            <div>
+            <div className="panel-options">
               <button>Add Widget</button>
               <div className="cancel">Cancel</div>
             </div>
