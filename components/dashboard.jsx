@@ -6,10 +6,18 @@ var React = require('react'),
 var Dashboard = React.createClass({
   getInitialState: function () {
     return {
-      title: "Hello",
+      title: null,
       addPanelShowing: false,
       widgets: []
     };
+  },
+
+  openPanel: function () {
+    this.setState({ addPanelShowing: true });
+  },
+
+  closePanel: function () {
+    this.setState({ addPanelShowing: false });
   },
 
   addWidget: function (widget) {
@@ -25,6 +33,7 @@ var Dashboard = React.createClass({
 
     return (
       <div className="container">
+        <Panel open={this.state.addPanelShowing} closePanel={this.closePanel} />
         <div className="header">
           <nav className="group">
             <img className="logo" src="images/logo-foodiq.png"/>
@@ -50,31 +59,31 @@ var Dashboard = React.createClass({
               <h1>{ this.state.title ? this.state.title : "New Dashboard" }</h1>
               <img src="images/icon-edit.png"/>
             </div>
-            <div className="dashboard-controls">
-              <div>
+            <div className="dashboard-controls group">
+              <div className="dashboard-switcher">
                 <p>Dashboard Switcher</p>
-                <div className="dashboard-select">
+                <div className="dashboard-select group">
                   <div className="dashboard-select-option">{ this.state.title ? this.state.title : "-Select a Dashboard-" }</div>
                   <img src="images/dropdown-arrow.png" />
                 </div>
               </div>
-              <div className="new-widget-button">
+              <div className="new-widget-button" onClick={this.openPanel}>
                 <img src="images/icon-add.png"/>
-                <div>Add a New Widget</div>
+                Add a New Widget
               </div>
             </div>
           </div>
 
           <div className="rule"></div>
 
-          <div>
+          <div className="new-widget">
             <img src="images/icon-add-large.png"/>
             Add a New Widget
           </div>
         </div>
 
         <div className="footer">
-          <div>© 2016 FoodIQ  |  © Energy Metrics, LLC</div>
+          <div className="copyright">© 2016 FoodIQ  |  © Energy Metrics, LLC</div>
         </div>
       </div>
     );
