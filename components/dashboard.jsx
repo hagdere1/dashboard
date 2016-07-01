@@ -13,7 +13,9 @@ var Dashboard = React.createClass({
   },
 
   openPanel: function () {
+    // Add slidedown when opening panel
     this.setState({ addPanelShowing: true });
+    window.scrollTo(0,0);
   },
 
   closePanel: function () {
@@ -27,8 +29,9 @@ var Dashboard = React.createClass({
   },
 
   render: function () {
-    var widgets = this.state.widgets.map(function (widget) {
-      return <Widget type={widget.type}
+    var widgets = this.state.widgets.map(function (widget, idx) {
+      return <Widget key={idx}
+                     type={widget.type}
                      size={widget.size}
                      title={widget.title}
                      description={widget.description}/>;

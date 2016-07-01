@@ -106,8 +106,7 @@ nav {
   min-height: -webkit-calc(100% - 169px); /* google, safari */
   min-height: -moz-calc(100% - 169px); /* firefox */
   background-color: #f7f7f7;
-  padding-left: 65px;
-  padding-right: 65px;
+  padding: 0 65px 62px 65px;
 }
 
 .dashboard-title {
@@ -423,4 +422,20 @@ nav {
 	color: #777777;
   text-decoration: underline;
   display: inline-block;
+}
+
+/* Tables */
+
+.table {
+  margin-bottom: 30px;
+}
+
+/* small table */
+
+.table.small {
+  width: 370px;
+  height: 370px;
+  background-color: #ffffff;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+	border: solid 1px #cccccc;
 }

@@ -37,7 +37,7 @@ var Table = React.createClass({
       });
 
       return (
-        <div className="table-small">
+        <div className="table small">
           <div className="table-header">
             <div>
               <h2>Title</h2>
@@ -73,7 +73,7 @@ var Table = React.createClass({
       });
 
       return (
-        <div className="table-medium">
+        <div className="table medium">
           <div className="table-header">
             <div>
               <h2>Title</h2>
@@ -112,7 +112,7 @@ var Table = React.createClass({
       });
 
       return (
-        <div className="table-large">
+        <div className="table large">
           <div className="table-header">
             <div>
               <h2>Title</h2>
