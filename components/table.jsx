@@ -26,7 +26,7 @@ var Table = React.createClass({
   ],
 
   render: function () {
-    if (this.props.tableSize === "small") {
+    if (this.props.size === "small") {
       var tableRows = this.smallTableData.map(function (country, idx) {
         return (
           <ul className="row" key={idx}>
@@ -60,7 +60,7 @@ var Table = React.createClass({
           </ul>
         </div>
       );
-    } else if (this.props.tableSize === "medium") {
+    } else if (this.props.size === "medium") {
       var tableRows = this.mediumTableData.map(function (country, idx) {
         return (
           <ul className="row" key={idx}>

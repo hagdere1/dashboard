@@ -1,7 +1,7 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
     Panel = require('./panel'),
-    Table = require('./table');
+    Widget = require('./widget');
 
 var Dashboard = React.createClass({
   getInitialState: function () {
@@ -21,19 +21,22 @@ var Dashboard = React.createClass({
   },
 
   addWidget: function (widget) {
-    var currentWidgets = this.state.widgets;
-    currentWidgets.push(widget);
-    this.setState({ widgets: currentWidgets });
+    var widgets = this.state.widgets;
+    widgets.push(widget);
+    this.setState({ widgets: widgets });
   },
 
   render: function () {
     var widgets = this.state.widgets.map(function (widget) {
-      return <Table />;
+      return <Widget type={widget.type}
+                     size={widget.size}
+                     title={widget.title}
+                     description={widget.description}/>;
     });
 
     return (
       <div className="container">
-        <Panel open={this.state.addPanelShowing} closePanel={this.closePanel} />
+        <Panel open={this.state.addPanelShowing} closePanel={this.closePanel} addWidget={this.addWidget}/>
         <div className="header">
           <nav className="group">
             <img className="logo" src="images/logo-foodiq.png"/>
@@ -68,15 +71,17 @@ var Dashboard = React.createClass({
                 </div>
               </div>
               <div className="new-widget-button" onClick={this.openPanel}>
-                <img src="images/icon-add.png"/>
-                Add a New Widget
+                <div className="new-widget-button-icon"><img src="images/icon-add.png"/></div>
+                <div className="new-widget-button-text">Add a New Widget</div>
               </div>
             </div>
           </div>
 
           <div className="rule"></div>
 
-          <div className="new-widget">
+          {widgets}
+
+          <div className="new-widget" onClick={this.openPanel}>
             <img src="images/icon-add-large.png"/>
             Add a New Widget
           </div>

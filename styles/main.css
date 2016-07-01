@@ -142,6 +142,8 @@ nav {
 
 .dashboard-switcher {
   float: left;
+  margin-right: 22px;
+  margin-top: 18px;
 }
 
 .dashboard-select {
@@ -150,6 +152,7 @@ nav {
 	border-radius: 3px;
 	background-color: #ffffff;
 	border: solid 1px #bbbbbb;
+  margin-top: 7px;
 }
 
 .dashboard-select-option {
@@ -158,13 +161,19 @@ nav {
 	font-size: 14px;
 	letter-spacing: -0.1px;
 	color: #555555;
+  margin-top: 7px;
+  margin-left: 9px;
+  margin-right: 36px;
 }
 
 .dashboard-select img {
   float: right;
+  margin-top: 10px;
+  margin-right: 9px;
 }
 
 .new-widget-button {
+  margin-top: 39px;
   float: left;
   width: 188px;
 	height: 30px;
@@ -173,8 +182,18 @@ nav {
 	border: solid 1px #bbbbbb;
   font-family: HelveticaNeue-Bold;
 	font-size: 14px;
-	text-align: center;
 	color: #333333;
+}
+
+.new-widget-button-icon {
+  float: left;
+  padding: 6px 8px;
+  border-right: 1px solid #bbbbbb;
+}
+
+.new-widget-button-text {
+  text-align: center;
+  line-height: 30px;
 }
 
 .rule {
@@ -355,20 +374,30 @@ nav {
   display: block;
 }
 
-.dashboard-header-selection input {
-  width: 268px;
+.dashboard-header-selection input, .dashboard-header-selection textarea {
+  width: 258px;
+  padding-left: 5px;
+  padding-right: 5px;
 	border-radius: 3px;
 	background-color: #ffffff;
 	border: solid 1px #bbbbbb;
+  text-align: left;
 }
 
-.dashboard-header-selection input.title {
+.dashboard-header-selection input {
   height: 30px;
   margin-bottom: 18px;
+  font-family: HelveticaNeue;
+  font-size: 12px;
 }
 
-.dashboard-header-selection input.description {
-  height: 60px;
+.dashboard-header-selection textarea {
+  height: 53px;
+  resize: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-family: HelveticaNeue;
+  font-size: 12px;
 }
 
 .panel-options {
