@@ -23,7 +23,11 @@
 nav {
   height: 60px;
   background-color: #ffffff;
-  padding: 0 65.7px;
+}
+
+.nav-inner {
+  width: 1170px;
+  margin: auto;
 }
 
 .logo {
@@ -96,8 +100,13 @@ nav {
 	color: #ffffff;
 }
 
-.dashboards-title {
-  padding: 6px 0 9px 64px;
+.spacer-inner {
+  width: 1170px;
+  margin: auto;
+}
+
+.spacer-inner {
+  padding: 6px 0 9px 0;
 }
 
 .main {
@@ -106,7 +115,12 @@ nav {
   min-height: -webkit-calc(100% - 169px); /* google, safari */
   min-height: -moz-calc(100% - 169px); /* firefox */
   background-color: #f7f7f7;
-  padding: 0 65px 62px 65px;
+  padding-bottom: 62px;
+}
+
+.main-header {
+  width: 1170px;
+  margin: auto;
 }
 
 .dashboard-title {
@@ -196,7 +210,7 @@ nav {
 }
 
 .rule {
-  width: 1150px;
+  width: 1170px;
 	height: 4px;
 	background-color: #333333;
   margin: 21px auto 32px auto;
@@ -424,10 +438,29 @@ nav {
   display: inline-block;
 }
 
+/* Widgets */
+
+.widgets {
+  width: 1209px;
+  /*margin-left: 50px;*/
+}
+
+.widget {
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+
+
 /* Tables */
 
 .table {
-  margin-bottom: 30px;
+
+}
+
+.col-headers, .table-rows, .row {
+  list-style: none;
 }
 
 /* small table */
