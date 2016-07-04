@@ -217,6 +217,7 @@ nav {
 }
 
 .new-widget {
+  float: right;
   width: 168px;
 	height: 168px;
 	background-color: #ffffff;
@@ -251,6 +252,7 @@ nav {
 /* Panel */
 
 .panel {
+  z-index: 999;
   position: absolute;
   top: 0;
   left: 0;
@@ -441,22 +443,21 @@ nav {
 /* Widgets */
 
 .widgets {
-  width: 1209px;
-  /*margin-left: 50px;*/
+  width: 1170px;
+  margin: auto;
 }
 
 .widget {
   display: inline-block;
-  margin-right: 30px;
+  float: left;
+  /*margin-right: 30px;*/
   margin-bottom: 30px;
 }
-
-
 
 /* Tables */
 
 .table {
-
+  display: inline-block;
 }
 
 .col-headers, .table-rows, .row {
@@ -467,6 +468,26 @@ nav {
 
 .table.small {
   width: 370px;
+  height: 370px;
+  background-color: #ffffff;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+	border: solid 1px #cccccc;
+}
+
+/* medium table */
+
+.table.medium {
+  width: 770px;
+  height: 370px;
+  background-color: #ffffff;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+	border: solid 1px #cccccc;
+}
+
+/* large table */
+
+.table.large {
+  width: 1170px;
   height: 370px;
   background-color: #ffffff;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);

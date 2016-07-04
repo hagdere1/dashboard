@@ -1,7 +1,9 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
+    Grid = require('./grid'),
     Panel = require('./panel'),
-    Widget = require('./widget');
+    DragDropContext = require('react-dnd').DragDropContext,
+    HTML5Backend = require('react-dnd-html5-backend');
 
 var Dashboard = React.createClass({
   getInitialState: function () {
@@ -29,15 +31,11 @@ var Dashboard = React.createClass({
     this.setState({ widgets: widgets });
   },
 
-  render: function () {
-    var widgets = this.state.widgets.map(function (widget, idx) {
-      return <Widget key={idx}
-                     type={widget.type}
-                     size={widget.size}
-                     title={widget.title}
-                     description={widget.description}/>;
-    });
+  updateWidgetOrder: function (reorderedWidgets) {
+    this.setState({ widgets: reorderedWidgets });
+  },
 
+  render: function () {
     return (
       <div className="container">
         <Panel open={this.state.addPanelShowing} closePanel={this.closePanel} addWidget={this.addWidget}/>
@@ -87,11 +85,12 @@ var Dashboard = React.createClass({
 
           <div className="rule"></div>
 
-          <div className="widgets group">{widgets}</div>
-
-          <div className="new-widget" onClick={this.openPanel}>
-            <img src="images/icon-add-large.png"/>
-            Add a New Widget
+          <div className="widgets group">
+            <Grid widgets={this.state.widgets} updateWidgetOrder={this.updateWidgetOrder} />
+            <div className="new-widget" onClick={this.openPanel}>
+              <img src="images/icon-add-large.png"/>
+              Add a New Widget
+            </div>
           </div>
         </div>
 
@@ -104,5 +103,8 @@ var Dashboard = React.createClass({
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  ReactDOM.render(<Dashboard />, document.getElementById("content"));
+  ReactDOM.render(
+    React.createElement(DragDropContext(HTML5Backend)(Dashboard)),
+    document.getElementById("content")
+  );
 });
