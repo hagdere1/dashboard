@@ -18,7 +18,6 @@ var widgetTarget = {
         hoverIndex = props.index;
 
     if (dragIndex === hoverIndex) {
-      debugger
       return;
     }
 

@@ -6,7 +6,8 @@ var Panel = React.createClass({
       type: "",
       size: "",
       title: "",
-      description: ""
+      description: "",
+      errors: []
     };
   },
 
@@ -27,21 +28,62 @@ var Panel = React.createClass({
     this.setState({ description: e.target.value });
   },
 
+  cancel: function () {
+    this.props.closePanel();
+    this.setState({
+      type: "",
+      size: "",
+      title: "",
+      description: "",
+      errors: [],
+    });
+  },
+
+  validateForm: function () {
+    var errors = [];
+
+    if (this.state.type === "") {
+      errors.push("Please select a widget type.")
+    }
+    if (this.state.size === "") {
+      errors.push("Please select a size.")
+    }
+
+    return errors;
+  },
+
   submit: function (e) {
     e.preventDefault();
-    // Add error handling
-    var widget = {
-      type: this.state.type,
-      size: this.state.size,
-      title: this.state.title,
-      description: this.state.description
-    };
-    this.props.addWidget(widget);
-    this.props.closePanel();
+
+    var errors = this.validateForm();
+    if (errors.length > 0) {
+      return this.setState({ errors: errors });
+    } else {
+      var widget = {
+        type: this.state.type,
+        size: this.state.size,
+        title: this.state.title,
+        description: this.state.description
+      };
+      this.props.addWidget(widget);
+      this.props.closePanel();
+      this.setState({
+        type: "",
+        size: "",
+        title: "",
+        description: "",
+        errors: [],
+      });
+    }
   },
 
   render: function () {
-    var panelClass = this.props.open ? "panel" : "panel closed";
+    var panelClass = this.props.open ? "panel" : "panel closed",
+        widgetTypeClass = this.state.type === "table" ? "widget-type type-selected" : "widget-type";
+
+    var errors = this.state.errors.map(function (error, idx) {
+      return <p className="error" key={idx}>{error}</p>;
+    });
 
     if (this.props.open) {
       return (
@@ -49,7 +91,7 @@ var Panel = React.createClass({
           <div className="panel-header">
             <div className="panel-header-inner group">
               <div className="panel-heading">Add a Widget</div>
-              <img src="images/icon-close.png" onClick={this.props.closePanel} />
+              <img src="images/icon-close.png" onClick={this.cancel} />
             </div>
           </div>
 
@@ -58,13 +100,16 @@ var Panel = React.createClass({
               <div className="panel-type-selection">
                 <p>Choose a Widget Type</p>
                 <div className="widget-types group">
-                  <article className="widget-type" onClick={this.selectTable}>
+                  <article className={widgetTypeClass} onClick={this.selectTable}>
                     <div className="widget-name">Table</div>
                     <div><img src="images/widgettype-table.png"/></div>
                     <ul className="widget-sizes group">
-                      <li onClick={this.selectSize.bind(this, "small")}>1/3 Width</li>
-                      <li onClick={this.selectSize.bind(this, "medium")}>2/3 Width</li>
-                      <li onClick={this.selectSize.bind(this, "large")}>Full Width</li>
+                      <li onClick={this.selectSize.bind(this, "small")}
+                          className={ this.state.size === "small" ? "size-selected" : "" }>1/3 Width</li>
+                      <li onClick={this.selectSize.bind(this, "medium")}
+                          className={ this.state.size === "medium" ? "size-selected" : "" }>2/3 Width</li>
+                      <li onClick={this.selectSize.bind(this, "large")}
+                          className={ this.state.size === "large" ? "size-selected" : "" }>Full Width</li>
                     </ul>
                   </article>
                   <article className="widget-type">
@@ -110,8 +155,9 @@ var Panel = React.createClass({
               </div>
 
               <div className="panel-options">
+                <div>{errors}</div>
                 <button>Add Widget</button>
-                <div className="cancel">Cancel</div>
+                <div className="cancel" onClick={this.cancel}>Cancel</div>
               </div>
             </div>
           </form>

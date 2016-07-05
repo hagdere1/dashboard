@@ -50,6 +50,11 @@ nav {
   border-right: 1px solid #dddddd;
 }
 
+.nav-tab:hover {
+  cursor: pointer;
+  background-color: #f7f7f7;
+}
+
 .nav-tab.selected {
   padding: 20px 23.5px;
   color: #333333;
@@ -88,6 +93,10 @@ nav {
   float: left;
   padding-bottom: 34px;
   padding-top: 17px;
+}
+
+.user-icon:hover {
+  cursor: pointer;
 }
 
 .spacer {
@@ -142,6 +151,10 @@ nav {
   margin-top: 51px;
 }
 
+.dashboard-title img:hover {
+  cursor: pointer;
+}
+
 .dashboard-controls {
   float: right;
 }
@@ -157,6 +170,10 @@ nav {
   float: left;
   margin-right: 22px;
   margin-top: 18px;
+}
+
+.dashboard-switcher:hover {
+  cursor: pointer;
 }
 
 .dashboard-select {
@@ -198,6 +215,11 @@ nav {
 	color: #333333;
 }
 
+.new-widget-button:hover {
+  background-color: #E0E0E0;
+  cursor: pointer;
+}
+
 .new-widget-button-icon {
   float: left;
   padding: 6px 8px;
@@ -217,7 +239,7 @@ nav {
 }
 
 .new-widget {
-  float: right;
+  float: left;
   width: 168px;
 	height: 168px;
 	background-color: #ffffff;
@@ -227,6 +249,11 @@ nav {
 	font-size: 14px;
 	text-align: center;
 	color: #333333;
+}
+
+.new-widget:hover {
+  background-color: #E0E0E0;
+  cursor: pointer;
 }
 
 .new-widget img {
@@ -259,7 +286,7 @@ nav {
   width: 100%;
   background-color:
   overflow-y: hidden;
-  max-height: 750px;
+  min-height: 750px;
   background-color: #ffffff;
 	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 	border: solid 1px #cccccc;
@@ -291,6 +318,10 @@ nav {
 .panel-header img {
   float: right;
   margin-top: 15px;
+}
+
+.panel-header img:hover {
+  cursor: pointer;
 }
 
 .panel-main {
@@ -326,8 +357,17 @@ nav {
   text-align: center;
 }
 
+.widget-type:first-child:hover {
+  border: 4px solid #00a4c7;
+  cursor: pointer;
+}
+
 .widget-type:last-child {
   margin-right: 0;
+}
+
+.widget-type.type-selected {
+  border: 4px solid #00a4c7;
 }
 
 .widget-type img {
@@ -364,8 +404,16 @@ nav {
   border-right: 1px solid #dddddd;
 }
 
+.widget-size li:hover {
+  background-color: #cccccc;
+}
+
 .widget-sizes li:last-child {
   border-right: 0px;
+}
+
+.widget-sizes li.size-selected {
+  background-color: #E0E0E0;
 }
 
 .dashboard-header-selection {
@@ -441,6 +489,11 @@ nav {
   margin-right: 30px;
 }
 
+.panel-options button:hover {
+  cursor: pointer;
+  background-color: #f7f7f7;
+}
+
 .cancel {
   font-family: HelveticaNeue;
 	font-size: 14px;
@@ -449,17 +502,32 @@ nav {
   display: inline-block;
 }
 
+.cancel:hover {
+  cursor: pointer;
+}
+
+.error {
+  font-family: HelveticaNeue;
+	font-size: 14px;
+  color: #FF0000;
+  margin-bottom: 5px;
+}
+
+.error:last-child {
+  margin-bottom: 15px;
+}
+
 /* Widgets */
 
 .widgets {
-  width: 1170px;
+  max-width: 1170px;
   margin: auto;
 }
 
 .widget {
   display: inline-block;
   float: left;
-  /*margin-right: 30px;*/
+  margin-right: 18px;
   margin-bottom: 30px;
 }
 

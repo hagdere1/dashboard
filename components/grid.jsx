@@ -5,7 +5,6 @@ var React = require('react'),
 
 var Grid = React.createClass({
   moveWidget: function (dragIndex, hoverIndex) {
-    debugger
     var dragWidget = this.props.widgets[dragIndex],
         hoverWidget = this.props.widgets[hoverIndex],
         updatedWidgets = this.props.widgets.slice();
