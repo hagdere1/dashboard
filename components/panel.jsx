@@ -53,7 +53,6 @@ var Panel = React.createClass({
   },
 
   submit: function (e) {
-    debugger
     e.preventDefault();
 
     var errors = this.validateForm();
@@ -79,16 +78,15 @@ var Panel = React.createClass({
   },
 
   render: function () {
-    var panelClass = this.props.open ? "panel" : "panel closed",
-        widgetTypeClass = this.state.type === "table" ? "widget-type type-selected" : "widget-type";
+    var widgetTypeClass = this.state.type === "table" ? "widget-type type-selected" : "widget-type";
 
     var errors = this.state.errors.map(function (error, idx) {
       return <p className="error" key={idx}>{error}</p>;
     });
 
-    if (this.props.open) {
+
       return (
-        <div className={panelClass}>
+        <div id="panel">
           <div className="panel-header">
             <div className="panel-header-inner group">
               <div className="panel-heading">Add a Widget</div>
@@ -164,9 +162,7 @@ var Panel = React.createClass({
           </form>
         </div>
       );
-    } else {
-      return <div></div>;
-    }
+
   }
 });
 

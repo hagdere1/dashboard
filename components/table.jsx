@@ -39,8 +39,12 @@ var Table = React.createClass({
         <div className="table small">
           <div className="table-header group">
             <div className="table-info">
-              <h2 className="table-name">Title</h2>
-              <p className="table-description">Table description</p>
+              <h2 className={this.props.title === "" ? "table-name info-blank" : "table-name"}>
+                {this.props.title === "" ? "Title" : this.props.title}
+              </h2>
+              <p className={this.props.description === "" ? "table-description info-blank" : "table-description"}>
+                {this.props.description === "" ? "Description" : this.props.description}
+              </p>
             </div>
             <div className="table-icons">
               <img className="table-icon-settings" src="images/icon-settings-copy.png"/>
@@ -83,8 +87,12 @@ var Table = React.createClass({
         <div className="table medium">
           <div className="table-header group">
             <div className="table-info">
-              <h2 className="table-name">Title</h2>
-              <p className="table-description">Table description</p>
+              <h2 className={this.props.title === "" ? "table-name info-blank" : "table-name"}>
+                {this.props.title === "" ? "Title" : this.props.title}
+              </h2>
+              <p className={this.props.description === "" ? "table-description info-blank" : "table-description"}>
+                {this.props.description === "" ? "Description" : this.props.description}
+              </p>
             </div>
             <div className="table-icons">
               <img className="table-icon-settings" src="images/icon-settings-copy.png"/>
@@ -154,7 +162,7 @@ var Table = React.createClass({
           <div className="cols group">
             <div className="col col-1-large">
               <div className="cell col-header group">
-                <div className="col-header-first">Country</div>
+                <div className="col-header-first">Continent</div>
                 <img className="col-header-first-icon" src="images/icon-table-sort-down.png"/>
               </div>
               {colOneCells}

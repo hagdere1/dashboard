@@ -9,19 +9,25 @@ var Dashboard = React.createClass({
   getInitialState: function () {
     return {
       title: null,
-      addPanelShowing: false,
       widgets: []
     };
   },
 
+  componentDidMount: function () {
+    $('#panel').hide();
+  },
+
   openPanel: function () {
-    // Add slidedown when opening panel
-    this.setState({ addPanelShowing: true });
+    $("#panel").slideDown( "slow", function() {
+      // Animation complete.
+    });
     window.scrollTo(0,0);
   },
 
   closePanel: function () {
-    this.setState({ addPanelShowing: false });
+    $("#panel").slideUp( "slow", function() {
+      // Animation complete.
+    });
     window.scrollTo(0,0);
   },
 
