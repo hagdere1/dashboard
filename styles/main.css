@@ -469,8 +469,72 @@ nav {
   display: inline-block;
 }
 
+.table-header {
+  padding-left: 20px;
+  padding-bottom: 12px;
+}
+
+.col {
+  float: left;
+}
+
+.cell {
+  padding-left: 20px;
+  line-height: 49px;
+  border-top: 1px solid #cccccc;
+  font-family: HelveticaNeue;
+	font-size: 14px;
+	color: #808080;
+}
+
 .col-headers, .table-rows, .row {
   list-style: none;
+}
+
+.col-header {
+  font-family: HelveticaNeue-Bold;
+	font-size: 14px;
+	color: #333333;
+}
+
+.col-header-first {
+  margin-right: 10px;
+  float: left;
+}
+
+.col-header-first-icon {
+  float: left;
+  margin-top: 20px;
+}
+
+.table-info {
+  float: left;
+}
+
+.table-icons {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.table-icon-settings {
+  margin-right: 15px;
+}
+
+.table-name {
+  font-family: HelveticaNeue;
+	font-size: 20px;
+	letter-spacing: -0.1px;
+	color: #333333;
+  margin-top: 14px;
+  margin-bottom: 5px;
+}
+
+.table-description {
+  font-family: HelveticaNeue;
+	font-size: 12px;
+	letter-spacing: -0.1px;
+	color: #A9A9A9;
 }
 
 /* small table */
@@ -483,6 +547,15 @@ nav {
 	border: solid 1px #cccccc;
 }
 
+.col-1-small {
+  width: 174px;
+  border-right: 1px solid #cccccc;
+}
+
+.col-2-small {
+  width: 195px;
+}
+
 /* medium table */
 
 .table.medium {
@@ -493,6 +566,25 @@ nav {
 	border: solid 1px #cccccc;
 }
 
+.col-1-medium {
+  width: 174px;
+  border-right: 1px solid #cccccc;
+}
+
+.col-2-medium {
+  width: 183px;
+  border-right: 1px solid #cccccc;
+}
+
+.col-3-medium {
+  width: 122px;
+  border-right: 1px solid #cccccc;
+}
+
+.col-4-medium {
+  width: 288px;
+}
+
 /* large table */
 
 .table.large {
@@ -501,4 +593,28 @@ nav {
   background-color: #ffffff;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
 	border: solid 1px #cccccc;
+}
+
+.col-1-large {
+  width: 174px;
+  border-right: 1px solid #cccccc;
+}
+
+.col-2-large {
+  width: 244px;
+  border-right: 1px solid #cccccc;
+}
+
+.col-3-large {
+  width: 244px;
+  border-right: 1px solid #cccccc;
+}
+
+.col-4-large {
+  width: 245px;
+  border-right: 1px solid #cccccc;
+}
+
+.col-5-large {
+  width: 259px;
 }

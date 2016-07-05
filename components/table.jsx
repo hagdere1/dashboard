@@ -27,115 +27,151 @@ var Table = React.createClass({
 
   render: function () {
     if (this.props.size === "small") {
-      var tableRows = this.smallTableData.map(function (country, idx) {
-        return (
-          <ul className="row" key={idx}>
-            <li>{country["Country"]}</li>
-            <li>{country["Most Consumed"]}</li>
-          </ul>
-        );
+      var colOneCells = this.smallTableData.map(function (country, idx) {
+        return <div className="cell" key={idx}>{country["Country"]}</div>;
+      });
+
+      var colTwoCells = this.smallTableData.map(function (country, idx) {
+        return <div className="cell" key={idx}>{country["Most Consumed"]}</div>;
       });
 
       return (
         <div className="table small">
-          <div className="table-header">
-            <div>
-              <h2>Title</h2>
-              <p>Table description</p>
+          <div className="table-header group">
+            <div className="table-info">
+              <h2 className="table-name">Title</h2>
+              <p className="table-description">Table description</p>
             </div>
             <div className="table-icons">
-              <img src="images/icon-settings-copy.png"/>
+              <img className="table-icon-settings" src="images/icon-settings-copy.png"/>
               <img src="images/icon-move-copy.png"/>
             </div>
           </div>
-          <ul className="col-headers">
-            <li className="col-header">
-              Country
-              <img src="images/icon-table-sort-down.png"/>
-            </li>
-            <li className="col-header">Most Consumed</li>
-          </ul>
-          <ul className="table-rows">
-            {tableRows}
-          </ul>
+          <div className="cols group">
+            <div className="col col-1-small">
+              <div className="cell col-header group">
+                <div className="col-header-first">Country</div>
+                <img className="col-header-first-icon" src="images/icon-table-sort-down.png"/>
+              </div>
+              {colOneCells}
+            </div>
+            <div className="col col-2-small">
+              <div className="cell col-header">Most Consumed</div>
+              {colTwoCells}
+            </div>
+          </div>
         </div>
       );
     } else if (this.props.size === "medium") {
-      var tableRows = this.mediumTableData.map(function (country, idx) {
-        return (
-          <ul className="row" key={idx}>
-            <li>{country["Country"]}</li>
-            <li>{country["Most Consumed"]}</li>
-            <li>{country["Type"]}</li>
-            <li>{country["Percentage of Diet"]}</li>
-          </ul>
-        );
+      var colOneCells = this.mediumTableData.map(function (country, idx) {
+        return <div className="cell" key={idx}>{country["Country"]}</div>;
+      });
+
+      var colTwoCells = this.mediumTableData.map(function (country, idx) {
+        return <div className="cell" key={idx}>{country["Most Consumed"]}</div>;
+      });
+
+      var colThreeCells = this.mediumTableData.map(function (country, idx) {
+        return <div className="cell" key={idx}>{country["Type"]}</div>;
+      });
+
+      var colFourCells = this.mediumTableData.map(function (country, idx) {
+        return <div className="cell" key={idx}>{country["Percentage of Diet"]}</div>;
       });
 
       return (
         <div className="table medium">
-          <div className="table-header">
-            <div>
-              <h2>Title</h2>
-              <p>Table description</p>
+          <div className="table-header group">
+            <div className="table-info">
+              <h2 className="table-name">Title</h2>
+              <p className="table-description">Table description</p>
             </div>
             <div className="table-icons">
-              <img src="images/icon-settings-copy.png"/>
+              <img className="table-icon-settings" src="images/icon-settings-copy.png"/>
               <img src="images/icon-move-copy.png"/>
             </div>
           </div>
-          <ul className="col-headers">
-            <li className="col-header">
-              Country
-              <img src="images/icon-table-sort-down.png"/>
-            </li>
-            <li className="col-header">Most Consumed</li>
-            <li className="col-header">Type</li>
-            <li className="col-header">Percentage of Diet</li>
-          </ul>
-          <ul className="table-rows">
-            {tableRows}
-          </ul>
+          <div className="cols group">
+            <div className="col col-1-medium">
+              <div className="cell col-header group">
+                <div className="col-header-first">Country</div>
+                <img className="col-header-first-icon" src="images/icon-table-sort-down.png"/>
+              </div>
+              {colOneCells}
+            </div>
+            <div className="col col-2-medium">
+              <div className="cell col-header">Most Consumed</div>
+              {colTwoCells}
+            </div>
+            <div className="col col-3-medium">
+              <div className="cell col-header">Type</div>
+              {colThreeCells}
+            </div>
+            <div className="col col-4-medium">
+              <div className="cell col-header">Percentage of Diet</div>
+              {colFourCells}
+            </div>
+          </div>
         </div>
       );
     } else {
-      var tableRows = this.largeTableData.map(function (country, idx) {
-        return (
-          <ul className="row" key={idx}>
-            <li>{country["Continent"]}</li>
-            <li>{country["Food 1"]}</li>
-            <li>{country["Food 2"]}</li>
-            <li>{country["Food 3"]}</li>
-            <li>{country["Food 4"]}</li>
-          </ul>
-        );
+      var colOneCells = this.largeTableData.map(function (continent, idx) {
+        return <div className="cell" key={idx}>{continent["Continent"]}</div>;
+      });
+
+      var colTwoCells = this.largeTableData.map(function (continent, idx) {
+        return <div className="cell" key={idx}>{continent["Food 1"]}</div>;
+      });
+
+      var colThreeCells = this.largeTableData.map(function (continent, idx) {
+        return <div className="cell" key={idx}>{continent["Food 2"]}</div>;
+      });
+
+      var colFourCells = this.largeTableData.map(function (continent, idx) {
+        return <div className="cell" key={idx}>{continent["Food 3"]}</div>;
+      });
+
+      var colFiveCells = this.largeTableData.map(function (continent, idx) {
+        return <div className="cell" key={idx}>{continent["Food 4"]}</div>;
       });
 
       return (
         <div className="table large">
-          <div className="table-header">
-            <div>
-              <h2>Title</h2>
-              <p>Table description</p>
+          <div className="table-header group">
+            <div className="table-info">
+              <h2 className="table-name">Title</h2>
+              <p className="table-description">Table description</p>
             </div>
             <div className="table-icons">
-              <img src="images/icon-settings-copy.png"/>
+              <img className="table-icon-settings" src="images/icon-settings-copy.png"/>
               <img src="images/icon-move-copy.png"/>
             </div>
           </div>
-          <ul className="col-headers">
-            <li className="col-header">
-              Continent
-              <img src="images/icon-table-sort-down.png"/>
-            </li>
-            <li className="col-header">Food 1</li>
-            <li className="col-header">Food 2</li>
-            <li className="col-header">Food 3</li>
-            <li className="col-header">Food 4</li>
-          </ul>
-          <ul className="table-rows">
-            {tableRows}
-          </ul>
+          <div className="cols group">
+            <div className="col col-1-large">
+              <div className="cell col-header group">
+                <div className="col-header-first">Country</div>
+                <img className="col-header-first-icon" src="images/icon-table-sort-down.png"/>
+              </div>
+              {colOneCells}
+            </div>
+            <div className="col col-2-large">
+              <div className="cell col-header">Food 1</div>
+              {colTwoCells}
+            </div>
+            <div className="col col-3-large">
+              <div className="cell col-header">Food 2</div>
+              {colThreeCells}
+            </div>
+            <div className="col col-4-large">
+              <div className="cell col-header">Food 3</div>
+              {colFourCells}
+            </div>
+            <div className="col col-5-large">
+              <div className="cell col-header">Food 4</div>
+              {colFiveCells}
+            </div>
+          </div>
         </div>
       );
     }
