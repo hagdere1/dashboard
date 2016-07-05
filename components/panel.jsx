@@ -53,6 +53,7 @@ var Panel = React.createClass({
   },
 
   submit: function (e) {
+    debugger
     e.preventDefault();
 
     var errors = this.validateForm();

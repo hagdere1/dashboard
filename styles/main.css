@@ -605,6 +605,10 @@ nav {
 	color: #A9A9A9;
 }
 
+.info-blank {
+  visibility: hidden;
+}
+
 /* small table */
 
 .table.small {

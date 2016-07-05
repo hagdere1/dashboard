@@ -139,8 +139,12 @@ var Table = React.createClass({
         <div className="table large">
           <div className="table-header group">
             <div className="table-info">
-              <h2 className="table-name">Title</h2>
-              <p className="table-description">Table description</p>
+              <h2 className={this.props.title === "" ? "table-name info-blank" : "table-name"}>
+                {this.props.title === "" ? "Title" : this.props.title}
+              </h2>
+              <p className={this.props.description === "" ? "table-description info-blank" : "table-description"}>
+                {this.props.description === "" ? "Description" : this.props.description}
+              </p>
             </div>
             <div className="table-icons">
               <img className="table-icon-settings" src="images/icon-settings-copy.png"/>
