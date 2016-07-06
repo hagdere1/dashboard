@@ -617,6 +617,7 @@ nav {
 .table-name.short {
   max-width: 270px;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .table-description {
@@ -629,6 +630,7 @@ nav {
 .table-description.short {
   max-width: 270px;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .info-blank {
