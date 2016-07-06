@@ -1,8 +1,8 @@
 # Dashboard
 
-![Dashboard](images/dashboard_screenshot.png)]
+![Dashboard](images/dashboard_screenshot.png)__
 
-![Panel](images/panel_screenshot.png)]
+![Panel](images/panel_screenshot.png)
 
 ## Description
 
