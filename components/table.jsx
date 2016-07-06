@@ -39,10 +39,10 @@ var Table = React.createClass({
         <div className="table small">
           <div className="table-header group">
             <div className="table-info">
-              <h2 className={this.props.title === "" ? "table-name info-blank" : "table-name"}>
+              <h2 className={this.props.title === "" ? "table-name info-blank" : "table-name short"}>
                 {this.props.title === "" ? "Title" : this.props.title}
               </h2>
-              <p className={this.props.description === "" ? "table-description info-blank" : "table-description"}>
+              <p className={this.props.description === "" ? "table-description info-blank" : "table-description short"}>
                 {this.props.description === "" ? "Description" : this.props.description}
               </p>
             </div>

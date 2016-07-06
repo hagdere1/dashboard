@@ -8,8 +8,9 @@ var React = require('react'),
 var Dashboard = React.createClass({
   getInitialState: function () {
     return {
-      title: null,
-      widgets: []
+      title: "",
+      widgets: [],
+      titleEditable: false
     };
   },
 
@@ -18,17 +19,12 @@ var Dashboard = React.createClass({
   },
 
   openPanel: function () {
-    $("#panel").slideDown( "slow", function() {
-      // Animation complete.
-    });
+    $("#panel").slideDown("slow", function() {});
     window.scrollTo(0,0);
   },
 
   closePanel: function () {
-    $("#panel").slideUp( "slow", function() {
-      // Animation complete.
-    });
-    window.scrollTo(0,0);
+    $("#panel").slideUp("slow", function() {});
   },
 
   addWidget: function (widget) {
@@ -41,7 +37,25 @@ var Dashboard = React.createClass({
     this.setState({ widgets: reorderedWidgets });
   },
 
+  toggleTitleEditable: function (e) {
+    e.preventDefault();
+    this.setState({ titleEditable: !this.state.titleEditable });
+  },
+
+  updateDashboardTitle: function (e) {
+    this.setState({ title: e.target.value });
+  },
+
   render: function () {
+    var dashboardTitle = <h1>{ this.state.title === "" ? "New Dashboard" : this.state.title }</h1>;
+    if (this.state.titleEditable) {
+      dashboardTitle = (
+        <form onSubmit={this.toggleTitleEditable}>
+          <input type="text" onChange={this.updateDashboardTitle} value={this.state.title} maxLength="30" />
+        </form>
+      );
+    }
+
     return (
       <div className="container">
         <Panel open={this.state.addPanelShowing} closePanel={this.closePanel} addWidget={this.addWidget}/>
@@ -63,7 +77,7 @@ var Dashboard = React.createClass({
           </nav>
           <div className="spacer">
             <div className="spacer-inner">
-              { this.state.title ? "Dashboards / " + this.state.title : "Dashboards" }
+              { this.state.title === "" ? "Dashboards" : "Dashboards / " + this.state.title }
             </div>
           </div>
         </div>
@@ -71,14 +85,14 @@ var Dashboard = React.createClass({
         <div className="main">
           <div className="main-header group">
             <div className="dashboard-title group">
-              <h1>{ this.state.title ? this.state.title : "New Dashboard" }</h1>
-              <img src="images/icon-edit.png"/>
+              {dashboardTitle}
+              <img onClick={this.toggleTitleEditable} src="images/icon-edit.png"/>
             </div>
             <div className="dashboard-controls group">
               <div className="dashboard-switcher">
                 <p>Dashboard Switcher</p>
                 <div className="dashboard-select group">
-                  <div className="dashboard-select-option">{ this.state.title ? this.state.title : "-Select a Dashboard-" }</div>
+                  <div className="dashboard-select-option">{ this.state.title === "" ? "-Select a Dashboard-" : this.state.title }</div>
                   <img src="images/dropdown-arrow.png" />
                 </div>
               </div>

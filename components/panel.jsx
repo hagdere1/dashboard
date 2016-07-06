@@ -72,7 +72,7 @@ var Panel = React.createClass({
         size: "",
         title: "",
         description: "",
-        errors: [],
+        errors: []
       });
     }
   },
@@ -146,11 +146,11 @@ var Panel = React.createClass({
                 <label className="dashboard-header-selection-label">
                   <strong>Widget Title</strong> (30 characters max)
                 </label>
-                <input type="text" onChange={this.handleTitleChange} value={this.state.title}/>
+                <input type="text" onChange={this.handleTitleChange} value={this.state.title} maxLength="30"/>
                 <label className="dashboard-header-selection-label">
                   <strong>Widget Description</strong> (50 characters max)
                 </label>
-                <textarea maxlength="50" onChange={this.handleDescriptionChange} value={this.state.description}/>
+                <textarea onChange={this.handleDescriptionChange} value={this.state.description} maxLength="50"/>
               </div>
 
               <div className="panel-options">

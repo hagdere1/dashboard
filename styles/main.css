@@ -146,6 +146,23 @@ nav {
   margin-right: 10px;
 }
 
+.dashboard-title form {
+  float: left;
+  margin-top: 45px;
+  margin-right: 10px;
+}
+
+.dashboard-title input {
+  width: 230px;
+  padding: 2px 5px;
+  border: 1px solid #bbbbbb;
+  border-radius: 3px;
+  font-family: HelveticaNeue;
+	font-size: 24px;
+	letter-spacing: -0.1px;
+	color: #333333;
+}
+
 .dashboard-title img {
   float: left;
   margin-top: 51px;
@@ -193,7 +210,8 @@ nav {
 	color: #555555;
   margin-top: 7px;
   margin-left: 9px;
-  margin-right: 36px;
+  max-width: 150px;
+  overflow: hidden;
 }
 
 .dashboard-select img {
@@ -595,11 +613,21 @@ nav {
   margin-bottom: 5px;
 }
 
+.table-name.short {
+  max-width: 270px;
+  overflow: hidden;
+}
+
 .table-description {
   font-family: HelveticaNeue;
 	font-size: 12px;
 	letter-spacing: -0.1px;
 	color: #A9A9A9;
+}
+
+.table-description.short {
+  max-width: 270px;
+  overflow: hidden;
 }
 
 .info-blank {
