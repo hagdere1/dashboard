@@ -1,6 +1,7 @@
 # Dashboard
 
-![Dashboard](images/dashboard_screenshot.png)__
+![Dashboard](images/dashboard_screenshot.png)
+<br />
 
 ![Panel](images/panel_screenshot.png)
 
