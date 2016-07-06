@@ -6,36 +6,14 @@ var React = require('react'),
     DropTarget = require('react-dnd').DropTarget;
 
 var widgetTarget = {
-  hover: function (props, monitor, component) {
-    console.log("Hovering");
-
-  },
-
   drop: function (props, monitor, component) {
-    console.log("Dropped");
-
     var dragIndex = monitor.getItem().widgetIdx,
         hoverIndex = props.index;
 
     if (dragIndex === hoverIndex) {
       return;
     }
-
-    // var hoverBoundingRect = findDOMNode(component).getBoundingClientRect(),
-    //     hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2,
-    //     clientOffset = monitor.getClientOffset(),
-    //     hoverClientY = clientOffset.y - hoverBoundingRect.top;
-    //
-    // if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
-  	// 	return;
-  	// }
-    //
-    // if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
-		// 	return;
-		// }
-
     props.moveWidget(dragIndex, hoverIndex);
-    // monitor.getItem().widgetIdx = hoverIndex;
   }
 };
 

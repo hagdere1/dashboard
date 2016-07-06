@@ -212,6 +212,7 @@ nav {
   margin-left: 9px;
   max-width: 150px;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .dashboard-select img {
@@ -542,8 +543,8 @@ nav {
 .widget {
   display: inline-block;
   float: left;
-  margin-right: 10px;
-  margin-bottom: 30px;
+  margin-right: 18px;
+  margin-bottom: 18px;
 }
 
 /* Tables */
@@ -656,7 +657,7 @@ nav {
 /* medium table */
 
 .table.medium {
-  width: 770px;
+  width: 760px;
   height: 370px;
   background-color: #ffffff;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
@@ -679,13 +680,13 @@ nav {
 }
 
 .col-4-medium {
-  width: 288px;
+  width: 278px;
 }
 
 /* large table */
 
 .table.large {
-  width: 1170px;
+  width: 1150px;
   height: 370px;
   background-color: #ffffff;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
@@ -698,20 +699,20 @@ nav {
 }
 
 .col-2-large {
-  width: 244px;
+  width: 240px;
   border-right: 1px solid #cccccc;
 }
 
 .col-3-large {
-  width: 244px;
+  width: 240px;
   border-right: 1px solid #cccccc;
 }
 
 .col-4-large {
-  width: 245px;
+  width: 240px;
   border-right: 1px solid #cccccc;
 }
 
 .col-5-large {
-  width: 259px;
+  width: 252px;
 }
