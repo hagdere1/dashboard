@@ -6,7 +6,6 @@ var React = require('react'),
 
 var widgetSource = {
   beginDrag: function (props) {
-    console.log('begin dragging widget', props);
     return { widgetIdx: props.index };
   }
 };
