@@ -2,6 +2,7 @@
 
 ![Dashboard](images/dashboard_screenshot.png)
 <br />
+<br />
 
 ![Panel](images/panel_screenshot.png)
 
