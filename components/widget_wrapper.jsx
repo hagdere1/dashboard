@@ -59,20 +59,19 @@ var WidgetWrapper = React.createClass({
 
   render: function () {
     var connectDropTarget = this.props.connectDropTarget,
-        isOver = this.props.isOver;
+        isOver = this.props.isOver,
+        width;
+
 
     return connectDropTarget(
       <div style={{
-        position: 'relative',
-        width: '100%',
-        height: '100%'
+        position: 'relative'
       }}>
         <Widget index={this.props.index}
                 type={this.props.type}
                 size={this.props.size}
                 title={this.props.title}
-                description={this.props.description}
-                style={{}} />
+                description={this.props.description} />
         {isOver &&
           <div style={{
             position: 'absolute',
@@ -80,10 +79,10 @@ var WidgetWrapper = React.createClass({
             left: 0,
             height: '100%',
             width: '100%',
-            zIndex: 1,
+            zIndex: 100,
             opacity: 0.5,
-            backgroundColor: 'yellow',
-          }} />
+            backgroundColor: 'yellow'
+          }}></div>
         }
       </div>
     );

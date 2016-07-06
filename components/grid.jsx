@@ -5,12 +5,36 @@ var React = require('react'),
 
 var Grid = React.createClass({
   moveWidget: function (dragIndex, hoverIndex) {
+    // This is the "back end" of the drag and drop function where the
+    // order of the widgets in the array are changed.
     var dragWidget = this.props.widgets[dragIndex],
         hoverWidget = this.props.widgets[hoverIndex],
         updatedWidgets = this.props.widgets.slice();
 
-    updatedWidgets[dragIndex] = hoverWidget;
-    updatedWidgets[hoverIndex] = dragWidget;
+    if (dragIndex < hoverIndex) {
+      // dragged widget goes after hovered-over widget
+      if (hoverIndex === updatedWidgets.length-1) {
+        // Splice dragged widget, push to back of array
+        updatedWidgets.splice(dragIndex, 1);
+        updatedWidgets.push(dragWidget);
+      } else {
+        var widgetsAfterHoverWidget = updatedWidgets.splice(hoverIndex + 1);
+        var dragWidget = updatedWidgets.splice(dragIndex, 1);
+        updatedWidgets = updatedWidgets.concat(dragWidget);
+        updatedWidgets = updatedWidgets.concat(widgetsAfterHoverWidget);
+      }
+    } else {
+      // dragged widget goes before hovered-over widget
+      if (hoverIndex === 0) {
+        updatedWidgets.splice(dragIndex, 1);
+        updatedWidgets.unshift(dragWidget);
+      } else {
+        var widgetsFromDropTarget = updatedWidgets.splice(hoverIndex);
+        var dragWidget = widgetsFromDropTarget.splice(widgetsFromDropTarget.indexOf(dragWidget), 1);
+        updatedWidgets = updatedWidgets.concat(dragWidget);
+        updatedWidgets = updatedWidgets.concat(widgetsFromDropTarget);
+      }
+    }
 
     this.props.updateWidgetOrder(updatedWidgets);
   },

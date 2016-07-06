@@ -19,10 +19,10 @@ var Table = React.createClass({
 
   largeTableData: [
     { "Continent": "Africa", "Food 1": "Biltong", "Food 2": "Fufu", "Food 3": "Mandazi", "Food 4": "Injera" },
-    { "Continent": "Africa", "Food 1": "Biltong", "Food 2": "Fufu", "Food 3": "Mandazi", "Food 4": "Injera" },
-    { "Continent": "Africa", "Food 1": "Biltong", "Food 2": "Fufu", "Food 3": "Mandazi", "Food 4": "Injera" },
-    { "Continent": "Africa", "Food 1": "Biltong", "Food 2": "Fufu", "Food 3": "Mandazi", "Food 4": "Injera" },
-    { "Continent": "Africa", "Food 1": "Biltong", "Food 2": "Fufu", "Food 3": "Mandazi", "Food 4": "Injera" },
+    { "Continent": "Australia", "Food 1": "Pavlova", "Food 2": "Chiko Roll", "Food 3": "Meat Pie", "Food 4": "Vegemite" },
+    { "Continent": "Asia", "Food 1": "Noodles", "Food 2": "Nasi Lemak", "Food 3": "Pho", "Food 4": "Thai Red Curry" },
+    { "Continent": "Europe", "Food 1": "Lasagna", "Food 2": "Kebab", "Food 3": "Croissant", "Food 4": "Fish 'n' Chips" },
+    { "Continent": "North America", "Food 1": "Pizza", "Food 2": "Apple Pie", "Food 3": "BBQ Ribs", "Food 4": "Hamburger" },
   ],
 
   render: function () {
